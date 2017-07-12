@@ -1,0 +1,193 @@
+/*reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+body{
+  font-family:Arial,"STHeiti", Helvetica, sans-serif;
+  background:#fff;
+  font-size:14px;
+  height:100%;
+  max-width:750px;
+  min-width:20pc;
+  line-height:1.5;
+}
+table{
+  border-collapse:collapse;
+  border-spacing:0
+}
+fieldset, img{
+  border:0
+}
+legend{
+  display:none
+}
+address, caption, cite, code, dfn, em, strong, th, var{
+  font-style:normal;
+  font-weight:normal
+}
+ol, ul{
+  list-style:none
+}
+caption, th{
+  text-align:left
+}
+h1, h2, h3, h4, h5, h6{
+  font-size:100%;
+  font-weight:normal
+}
+q:before, q:after{
+  content:''
+}
+abbr, acronym{
+  border:0
+}
+html{-webkit-text-size-adjust:none;width:100%;height:100% } /*����iphone��safari���ֺ��Զ�����*/
+input[type="text"], input[type="button"], input[type="submit"], input[type="search"]{
+  -webkit-appearance:none;
+  border-radius:0;
+} /*ȥ��iphoneĬ����ʽ��input��Բ�ǣ�*/
+
+html, body { position: relative;}
+/*********竖屏********/
+@media screen and (orientation: portrait) { 
+            #page-box{width: 100%;height: 100%;}
+            .page01{position:absolute; top:0;left:0;width:100%;height:100%;background-size:cover;z-index: 1000;background:#000;}
+            .img-load-now{ position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);  }
+            .loading{width: 130/75rem; height: 180/75rem;background-image:url(../img/loading.gif);background-size:130/75rem 180/75rem;
+                    animation: birdloadingla 1s ease  infinite;-webkit-animation: birdloadingla 1s ease  infinite; }          
+            .mask{ text-align: center;margin-top: 30/75rem;font-size: 36/133.4rem;color:#fff; }
+            .mask span{color:#fff;font-size: 36/133.4rem;}
+            #portrait{width:100%;height:100%;margin: auto;text-align: center;overflow: hidden;position: relative;}
+            .bg{width: 100%; height:100%;}
+            .three-min{width:750/75rem; height:556/75rem; position: absolute; top:200/75rem; left:0;}
+            .phone2{width: 134/130rem; height: 218/130rem; position: absolute; top: 820/75rem; left: 333/75rem;animation: phone 4s linear infinite;-webkit-animation: phone 4s linear infinite;}
+            #landscape{ display:none;}
+            h3{font-family: 'Microsoft Yahei'; font-size: 24/75rem; color:#ffffff;position: absolute;top:975/75rem;left:325/75rem;}
+            @-webkit-keyframes phone{
+                0%{
+                   -webkit-transform: rotateZ(0deg);
+                  transform: rotateZ(0deg);
+                }
+                25%{
+                    -webkit-transform: rotateZ(90deg);
+                  transform: rotateZ(90deg);
+                }
+                50%{
+                    -webkit-transform: rotateZ(0deg);
+                  transform: rotateZ(0deg);
+                }
+                75%{
+                     -webkit-transform: rotateZ(90deg);
+                  transform: rotateZ(90deg);
+                }
+                100%{
+                    -webkit-transform: rotateZ(0deg);
+                  transform: rotateZ(0deg);
+                }
+            } 
+            @keyframes phone{
+                0%{
+                  -webkit-transform: rotateZ(0deg);
+                  transform: rotateZ(0deg);
+                }
+                25%{
+                  -webkit-transform: rotateZ(90deg);
+                  transform: rotateZ(90deg);
+                }
+                50%{
+                  -webkit-transform: rotateZ(0deg);
+                  transform: rotateZ(0deg);
+                }
+                75%{
+                  -webkit-transform: rotateZ(90deg);
+                  transform: rotateZ(90deg);
+                }
+                100%{
+                  -webkit-transform: rotateZ(0deg);
+                  transform: rotateZ(0deg);
+                }
+            }
+
+        .landscapeWeixin{
+
+          -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+
+        }
+}
+
+/*********横屏********/
+@media screen and (orientation: landscape) {
+            #page-box{width: 100%;height: 100%;}
+            #portrait{display:none; }
+            #landscape{display:block; position: relative;}
+            .ending{width: 100%; height: 100%;position: absolute;left:0;top:0;background:#fff;transition: all 0.3s ease-in;-webkit-transition: all 0.3s ease-in;}
+            #fadeOut{width:100%;height:100%;position: absolute;top:0;left:0;background:#fff;}
+            .ending-pic1{width:672/133.4rem; height:646/133.4rem; position: absolute; top:0 ; left:0 ;}
+            .ending-pic2{width:681/140rem; height:542/140rem; position: absolute; top:20/133.4rem; right:35/133.4rem;}
+            .join{width:381/133.4rem; height:52/133.4rem; position: absolute; top:550/133.4rem ; left:787/133.4rem;}
+            .ending-pic3{width:77/133.4rem; height:32/133.4rem; position: absolute;top: 560/133.4rem; right:453/133.4rem;-webkit-animation: org 1s linear infinite;animation: org 1s linear infinite;}
+            //.sign-up{width: 560/133.4rem; height: 65/133.4rem; line-height:65/133.4rem;text-align: center;
+            //         vertical-align:middle;position: absolute; top:519/133.4rem; left: 681/133.4rem;}
+            //.sign-up span{font-family:'黑体';font-size:26/133.4rem; color: #FFFFFF;-webkit-transform:skew(-10deg); transform: skew(-10deg);}
+            .ending span{text-align: center;line-height:65/133.4rem;font-family:'黑体';font-size:26/133.4rem; color: #FFFFFF;-webkit-transform:skew(-10deg); transform: skew(-10deg);background:#2b69b6;}
+            .btn01{width: 360/133.4rem; height:65/133.4rem;position: absolute; top:500/133.4rem; left: 685/133.4rem;}
+            .btn02{width: 179/133.4rem;height: 65/133.4rem;position: absolute;top:500/133.4rem;right:107/133.4rem;}
+            .btn-music{width: 53/133.4rem; height: 54/133.4rem;position: absolute; top:28/133.4rem; left: 1247/133.4rem;}
+            .open-music{animation: music-btn 3s linear infinite; -webkit-animation: music-btn 3s linear infinite;}
+            .music{width:100%; height: 100%;}
+            @-webkit-keyframes music-btn{
+                   form{
+                     -webkit-transform: rotateZ(0deg);
+                     transform:rotateZ(0deg);
+                   }
+                   to{
+                      -webkit-transform: rotateZ(360deg);
+                     transform:rotateZ(360deg);
+                   }  
+            }   
+            @keyframes music-btn{
+                form{
+                  -webkit-transform: rotateZ(0deg);
+                  transform:rotateZ(0deg);
+                }
+                to{
+                  -webkit-transform: rotateZ(360deg);
+                  transform:rotateZ(360deg);
+                }
+            }
+            @keyframes org{
+              from{
+                opacity:1;
+              }to{
+                opacity:0.2;  }
+            }
+            @-webkit-keyframes org{
+              from{
+                opacity:1;
+              }to{
+                 opacity:0.2;  }
+            }
+
+
+
+
+
+
+                
+}

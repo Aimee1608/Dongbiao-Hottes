@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>东风标致X008 SUV盛会 GO!</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,shrink-to-fit=no">
+	    <meta content="yes" name="apple-mobile-web-app-capable">
+	    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+	    <meta content="telephone=no" name="format-detection">
+		<link rel="stylesheet" href="css/style.css"/>
+	    <link rel="stylesheet" type="text/css" href="css/styleJQ.css"/>
+	    <script>
+	        document.addEventListener("WeixinJSBridgeReady", function () {
+	            audioAutoPlay('musicStar');
+	        }, false);
+    	</script>
+		<style>
+			#animation_container {
+				position:absolute;
+				margin:auto;
+				left:-100%;right:-100%;
+				top:-100%;bottom:-100%;
+			}
+		</style>
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "https://hm.baidu.com/hm.js?337b087e1b256259bb7e0909797f3d6a";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+	</head>
+	<body>
+		<div id="page-box" >
+			<!--进度条页面-->
+		    <div class="page01" id="loadingPage">
+		        <div class="img-load-now">
+		        	<!--加载动画-->
+		            <div class="loading"></div>
+		            <div class="mask"><span id="img-loading-txt">100</span></div>
+		        </div>
+		    </div>
+		    <!--竖屏体验内容-->
+		    <div id="portrait" style="display: none;z-index: 999">
+		    	<img src="img/bg.png" class="bg"/>
+		    	<img src="img/minute3.png" class="three-min"/>
+		    	<img src="img/phone.png" class="phone2"/>
+				<h3>横屏互动</h3>			
+			</div>
+		    <!--横屏体验内容页面-->
+		    <div id="landscape" style="width:100%;height:100%;position: absolute;top:0;left:0; overflow:hidden;">
+
+				<!--动画部分-->
+				<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); ">
+					<canvas id="canvas" width="1334" height="646" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+					<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; position: absolute; left: 0px; top: 0px; display: block;">
+					</div>
+				</div>
+				<div id="ending" class="ending " style="display: none;">
+					<img src="img/ending/go.jpg" class="ending-pic1"/>
+					<img src="img/ending/information.png" class="ending-pic2"/>
+					<img src="img/ending/jion.png" class="join" id="join"/>
+					<img src="img/ending/match.png" class="ending-pic3"/>
+					<!--<div class="sign-up" id="gotoInfo">-->
+						<!--<span class="btn01" id="gotoInfo">预约试驾</span>-->
+						<!--<span class="btn02" id="gotoInfo02">>></span>-->
+						
+					<!--</div>-->
+					<!--<div id="fadeOut" ></div>-->
+				</div>
+				<div id="ending02" class="ending02" >
+					<div  class="userInfo-box" >
+						<div class="input-title"><i><span>好</span>礼相送！预约试驾</i></div>
+						<p class="userInfo-title">我要参加</p>
+						<p class="userInfo-tip">即日起至2017年4月21日，凡在线成功填写预约试驾表单的用户，即有机会赢取精美好礼一份！</p>
+						<ul class="input-form">
+							<li>
+								<span class="firstspan">姓名</span>
+								<input type="text" id="username" name="username" placeholder="姓名"  maxlength=10 minlength=2 required="required" />
+							</li>
+							<li>
+								<span class="firstspan">手机</span>
+								<input type="tel" id="phone" name="phone" placeholder="手机" required="required" />
+							</li>
+							<li>
+								<span>试驾车型</span>
+								<select name="cartype" id="cartype">
+									<option value="-1">选择车型</option>
+									<option value="61">4008</option>
+									<option value="62">3008</option>
+									<option value="63">2008</option>
+								</select>
+							</li>
+							<li class="province-city">
+								<select id="ddlProvince" name="ddlProvince" class="ddlProvince" title="省/00" >
+									<option value="-1">选择省份</option>
+								</select>
+								<select id="ddlCity" name="ddlCity" class="ddlCity">
+									<option value="-1">选择城市</option>
+								</select>
+							</li>
+							<li>
+								<span>经销商</span>
+								<select id="agency" name="agency"  >
+									<option value="-1">经销商</option>
+								</select>
+							</li>
+						</ul>
+						<div class="input-form-right">
+							<img src="img/ending/jiangpin.png" alt=""/>
+						</div>
+						<div class="btn-userInfo"><p  id="btn-userInfo" >提&nbsp;&nbsp;&nbsp;交</p></div>
+						<a id="rule-icon" >发奖及售后说明</a>
+					</div>
+					<div class="userInfo" id="actionRules">
+						<div  class="action-rules">
+							<span class="close">×</span>
+							<h2>发奖及售后说明:</h2>
+							<h4>
+								1、即日起至2017年4月21日，预约试驾，填写完整个人信息，即有机会获得精美礼品，数量有限，发完为止。获奖名单在活动结束后统一公布，敬请期待。<br/>
+								2、所有礼品为电子卡，自活动结束之日起，60个工作日内以短信方式统一发放，还请务必填写真实姓名、联系电话，以便活动后发放电子兑换码。<br/>
+								3、活动结束后行圆汽车将与获奖网友联系，届时请您与我们核实获奖信息（获奖人姓名、手机号码）。<br/>
+								4、若活动结束后的60个工作日内，无法联系到您，且则视为您主动放弃获奖资格，奖品亦不予保留。<br/>
+								5、最终解私权归行圆汽车所有，如有疑问，请邮件至Service1@xingyuanauto.com邮箱，我们会第一时间为您解答。<br/>
+							</h4>
+						</div>
+					</div>
+					<div class="userInfo" id="prizeResult">
+						<div class="prize-result">
+							<div class="prize-result-info">
+								<h1 class="notGet"><i></i></h1>
+								<p>感谢您参与东风标致X008 SUV盛会活动</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                    <!--<div id="userInfo" class="userInfo">-->
+					<!--<div id="userInfo-box" class="userInfo-box" >-->
+						<!--<span id="close-userInfo" class="close">×</span>-->
+						<!--<p class="userInfo-title">报名注册</p>-->
+						<!--<p class="userInfo-tip">填写完整个人信息，即有机会赢取行圆汽车提供的精美礼品。</p>-->
+						<!--<ul class="input-form-left input-form">-->
+							<!--<li>-->
+								<!--<span class="firstspan">姓名</span>-->
+								<!--<input type="text" id="username" name="username" placeholder="姓名"  maxlength=10 minlength=2 required="required" style=" -webkit-user-modify: read-write-plaintext-only;"/>-->
+							<!--</li>-->
+							<!--<li>-->
+								<!--<span class="firstspan">手机</span>-->
+								<!--<input type="tel" id="phone" name="phone" placeholder="手机" required="required" />-->
+							<!--</li>-->
+							<!--<li>-->
+								<!--<span>省份</span>-->
+								<!--<select id="ddlProvince" name="ddlProvince" title="省/00" >-->
+									<!--<option value="-1">省/直辖市</option>-->
+								<!--</select>-->
+							<!--</li>-->
+							<!--<li>-->
+								<!--<span>城市</span>-->
+								<!--<select id="ddlCity" name="ddlCity">-->
+									<!--<option value="-1">城市</option>-->
+								<!--</select>-->
+							<!--</li>-->
+						<!--</ul>-->
+						<!--<ul class="input-form-right input-form">-->
+							<!--<li>-->
+								<!--<span>经销商</span>-->
+								<!--<select id="agency" name="agency"  >-->
+									<!--<option value="-1">经销商</option>-->
+								<!--</select>-->
+							<!--</li>-->
+							<!--<li>-->
+								<!--<span>意向车型</span>-->
+								<!--<select name="cartype" id="cartype">-->
+									<!--<option value="-1">意向车型</option>-->
+									<!--<option value="61">4008</option>-->
+									<!--<option value="62">3008</option>-->
+									<!--<option value="63">2008</option>-->
+								<!--</select>-->
+							<!--</li>-->
+						<!--</ul>-->
+						<!--<div id="btn-userInfo" class="btn-userInfo">提&nbsp;&nbsp;&nbsp;交</div>-->
+						<!--<a id="rule-icon" ><i>活动详情</i></a>-->
+					<!--</div>-->
+
+				<!--</div>-->
+				<!--<div class="userInfo" id="actionRules">-->
+					<!--<div  class="action-rules">-->
+						<!--<span class="close">×</span>-->
+						<!--&lt;!&ndash;<h1><i>X008SUV盛会</i></h1>&ndash;&gt;-->
+						<!--<h2>活动说明:</h2>-->
+						<!--<h4>-->
+							<!--2017年3月27日至2017年4月21日，东风标致“0”息“0”税“0”元保养回馈活动倾情开启，活动期间，凡是预约试驾成功的用户，即有机会赢取丰厚大奖！<br/>-->
+							<!--一等奖：200元京东卡（50名）；-->
+							<!--二等奖：100元电话充值卡（100名）；-->
+							<!--三等奖：1个月爱奇艺会员（500名）。-->
+						<!--</h4>-->
+						<!--<h2>发奖及售后说明:</h2>-->
+						<!--<h4>-->
+							<!--1、预约试驾成功，即刻随机抽取中奖网友，获奖名单会在活动结束后统一公布，敬请期待。<br/>-->
+							<!--2、奖品以实物为准，自活动结束之日起，60个工作日内以短信方式统一发放兑换码。<br/>-->
+							<!--3、活动结束后行圆汽车将与获奖网友联系，届时请您与我们核实获奖信息（获奖人姓名、手机号码）。<br/>-->
+							<!--4、若活动结束后的2个月内，无法联系到您，且则视为您主动放弃获奖资格，奖品亦不予保留。<br/>-->
+						<!--</h4>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="userInfo" id="prizeResult">-->
+					<!--<div class="prize-result">-->
+						<!--<div class="prize-result-info">-->
+							<!--<h1 class="notGet"><i>很抱歉，您没有中奖</i></h1>-->
+							<!--<p>感谢您参与东风标致X008 SUV盛会活动！</p>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="usercar">
+					<div id="buycar">
+						<span class="closecar">×</span>
+						<img src="img/ending/xiangqing.png" alt="" class="carpic"/>
+					</div>
+				</div>-->
+				
+				<div class="btn-music open-music">
+					<img src="img/musicopen.png" class="open music" style="display: block;"/>
+					<img src="img/musicclose.png" class="clock music" style="display: none;"/>
+				</div>
+			</div>
+		    <!--音乐-->
+		    <audio src="video/Echo.mp3" id="musicStar"  loop="loop" preload="load" autoplay="autoplay"></audio>
+   		</div>
+	</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://code.createjs.com/createjs-2015.11.26.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/PEUGETO.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/province.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jiangqian.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/style.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/share.demo.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="js/wx_share.js"></script>
+	<script>
+		function audioAutoPlay(id){
+			var audio = document.getElementById(id),
+					play = function(){
+						audio.play();
+						document.removeEventListener("touchstart",play, false);
+					};
+			audio.play();
+			document.addEventListener("touchstart",play, false);
+		}
+		var isAppInside=/micromessenger/i.test(navigator.userAgent.toLowerCase())||/yixin/i.test(navigator.userAgent.toLowerCase());
+	</script>
+</html>
